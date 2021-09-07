@@ -1,0 +1,74 @@
+.tour {
+    margin-top: 70px;
+    position: relative;
+    @include media(992px) {
+        display: none;
+    }
+    &__content {
+        background: url(../images/live_360.jpg);
+        background-size: cover;
+        height: 200px;
+        padding: 20px 60px 0 60px;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        &-item {
+            position: absolute;
+            top: 0;
+        }
+        &-live {
+            background: #DC0000;
+            color: $primary__color;
+            padding: 15px 20px;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 14px;
+            font-family: $neue__Demi-bold;
+            border-radius: 7px;
+            position: relative;
+        }
+        &-live::before {
+            content: '';
+            width: 7px;
+            height: 7px;
+            border-radius: 50px;
+            line-height: 7px;
+            background: $primary__color;
+            position: absolute;
+            left: 7px;
+            top: 20px;
+        }
+    }
+    &__radius {
+        display: flex;
+        justify-content: space-between;
+        &-tourBtn {
+            position: absolute;
+            top: 70%;
+            left: 20%;
+            display: flex;
+            align-items: center;
+            &--link {
+                @include radiusBtn();
+                background-color: $primary__color;
+                color: $second__color;
+            }
+            &--text {
+                margin-top: 60px;
+                font-size: 14px;
+                color: $textLight__color;
+                font-family: $neue__regular;
+            }
+        }
+        &-liveBtn {
+            position: absolute;
+            top: 70%;
+            right: 20%;
+            display: flex;
+            align-items: center;
+            &--Red {
+                color: #DC0000;
+            }
+        }
+    }
+}

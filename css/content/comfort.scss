@@ -1,0 +1,76 @@
+.comfort {
+    margin-top: 200px;
+    @include media(992px) {
+        margin-top: 70px;
+    }
+    &__content {
+        @include textLeft();
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        @include media(992px) {
+            margin-top: 35px;
+        }
+        &-box {
+            margin-top: 50px;
+            display: flex;
+            width: 35%;
+            @include media(992px) {
+                width: 100%;
+                justify-content: start;
+                border-bottom: 1px solid $textLight__color;
+                padding: 18px 0;
+                margin-top: 0px;
+            }
+            &:nth-child(1) {
+                @include media(992px) {
+                    border-top: 1px solid $textLight__color;
+                }
+            }
+        }
+        &-num {
+            font-size: 24px;
+            font-family: $neue__medium;
+            color: $second__color;
+            line-height: 32px;
+            margin-right: 28px;
+            @include media(992px) {
+                font-size: 16px;
+                line-height: 21px;
+            }
+        }
+        &-type {
+            font-size: 24px;
+            font-family: $neue__medium;
+            color: $second__color;
+            line-height: 32px;
+            padding-bottom: 10px;
+            text-transform: uppercase;
+            @include media(992px) {
+                font-size: 16px;
+                line-height: 21px;
+            }
+        }
+        &-text {
+            font-size: 16px;
+            font-family: $neue__regular;
+            color: $second__color;
+            @include media(992px) {
+                font-size: 12px;
+            }
+        }
+        &-image {
+            display: none;
+            @include media(992px) {
+                display: block;
+                margin-left: auto;
+                width: 50px;
+                height: 50px;
+                @include media(567px) {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+        }
+    }
+}

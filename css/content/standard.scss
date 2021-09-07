@@ -1,0 +1,79 @@
+$primary__color: #ffffff;
+$second__color: #000000;
+$textLight__color: #7d7d7d;
+$neue__Demi-bold: "Neue-DemiBold";
+$neue__bold: "Neue-bold";
+$neue__medium: "Neue-medium";
+$neue__regular: "Neue-regular";
+$segeo__UI: "Segeo-UI";
+@mixin media($wh: 1200px) {
+  @media screen and (max-width: $wh) {
+    @content;
+  }
+}
+
+.container {
+  max-width: 1366px;
+  width: 100%;
+  padding: 0 20px;
+  margin: auto;
+  box-sizing: border-box;
+  @include media(992px) {
+    max-width: 1066px;
+    width: 100%;
+  }
+  @include media(768px) {
+    max-width: 990px;
+    width: 100%;
+  }
+}
+
+@mixin radiusBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  text-align: center;
+  background: none;
+  line-height: 28px;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-family: $neue__medium;
+  color: $second__color;
+  border: 1px solid #b2b2b2;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+@mixin mainTitle {
+  font-size: 48px;
+  font-family: $neue__Demi-bold;
+  line-height: 48px;
+  @include media(768px) {
+    font-size: 32px;
+    text-align: center;
+  }
+}
+
+@mixin mainText {
+  font-size: 16px;
+  font-family: $neue__regular;
+  line-height: 21px;
+  color: $textLight__color;
+  padding-top: 25px;
+  @include media(768px) {
+    font-size: 14px;
+    text-align: center;
+    line-height: 19px;
+    padding-top: 10px;
+  }
+}
+
+@mixin textLeft {
+  width: 70%;
+  margin: auto;
+  @include media(992px) {
+    width: 100%;
+  }
+}

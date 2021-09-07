@@ -1,0 +1,86 @@
+.article {
+    margin-top: 200px;
+    @include media(992px) {
+        display: none;
+    }
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        &-title {
+            font-size: 48px;
+            font-family: $neue__Demi-bold;
+            line-height: 48px;
+            color: $second__color;
+            @include media(992px) {
+                font-size: 38px;
+            }
+            @include media(992px) {
+                font-size: 38px;
+            }
+        }
+        &-text {
+            font-size: 20px;
+            font-family: $neue__medium;
+            line-height: 27px;
+            color: $second__color;
+            padding-right: 15px;
+            text-decoration: none;
+        }
+    }
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 57px;
+        @include media(992px) {
+            flex-wrap: wrap;
+        }
+        &-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            width: 300px;
+            @include media(992px) {
+                &:not(:last-child) {
+                    margin-right: 15px;
+                }
+                width: 48%;
+            }
+            @include media(768px) {
+                width: 100%;
+                &:not(:last-child) {
+                    margin-right: 0px;
+                }
+            }
+            &--img {
+                width: 100%;
+            }
+            &--title {
+                font-size: 20px;
+                font-family: $neue__medium;
+                line-height: 27px;
+                color: $second__color;
+                padding-top: 25px;
+            }
+            &--text {
+                font-size: 16px;
+                font-family: $neue__regular;
+                color: $textLight__color;
+                line-height: 21px;
+                padding: 25px 0 65px 0;
+            }
+            &--span {
+                font-size: 14px;
+                font-family: $neue__medium;
+                color: $textLight__color;
+            }
+            &--link {
+                text-decoration: none;
+                padding-right: 15px;
+                color: $textLight__color;
+            }
+        }
+    }
+}

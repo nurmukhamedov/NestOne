@@ -1,0 +1,178 @@
+.location {
+  margin-top: 200px;
+  @include media(992px) {
+    margin-top: 70px;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    @include media(992px) {
+      flex-direction: column;
+    }
+    &-title {
+      font-size: 48px;
+      font-family: $neue__Demi-bold;
+      line-height: 48px;
+      color: $second__color;
+      @include media(992px) {
+        text-align: center;
+        font-size: 32px;
+        line-height: 32px;
+      }
+    }
+    &-text {
+      font-size: 20px;
+      font-family: $neue__regular;
+      color: $second__color;
+      line-height: 27px;
+      text-align: right;
+      @include media(992px) {
+        text-align: left;
+        font-size: 16px;
+        line-height: 21px;
+      }
+    }
+    &-span {
+      display: none;
+      font-size: 12px;
+      color: $textLight__color;
+      font-family: $neue__regular;
+      @include media(992px) {
+        display: block;
+        text-align: center;
+        padding: 25px 0 46px 0;
+      }
+    }
+  }
+  &__content {
+    margin-top: 100px;
+    &-nav {
+      padding-bottom: 41px;
+      &--line {
+        border: 1px solid $textLight__color;
+        background: $textLight__color;
+      }
+      &--ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow-x: hidden;
+      }
+      &--item {
+        margin-top: 42px;
+        &:not(:first-child) {
+          margin-left: 52px;
+        }
+      }
+      &--link {
+        text-decoration: none;
+        font-size: 16px;
+        color: $second__color;
+        font-family: $neue__Demi-bold;
+      }
+    }
+
+    &-img {
+      width: 100%;
+      margin: auto;
+      filter: grayscale(100%) sepia(24%) hue-rotate(35deg) saturate(0%);
+    }
+    &-info {
+      display: flex;
+      justify-content: space-between;
+      width: 70%;
+      margin: auto;
+      @include media(992px) {
+        flex-direction: column;
+        width: 100%;
+      }
+      margin-top: 150px;
+      &--itemLeft {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 35%;
+        @include media(992px) {
+          flex-direction: row;
+          flex-wrap: wrap;
+          width: 100%;
+          order: 2;
+          margin-top: 20px;
+        }
+      }
+      &--startText {
+        font-size: 20px;
+        line-height: 27px;
+        font-family: $neue__regular;
+        color: $second__color;
+        margin-bottom: 20px;
+        @include media(992px) {
+          font-size: 14px;
+          line-height: 19px;
+        }
+      }
+      &--startLink {
+        @include radiusBtn();
+        @include media(992px) {
+          font-size: 14px;
+        }
+      }
+      &--line {
+        background: $textLight__color;
+        margin: 172px 0 26px 0;
+        @include media(992px) {
+          width: 100%;
+        }
+      }
+      &--endText {
+        font-size: 16px;
+        font-family: $neue__regular;
+        color: $second__color;
+        margin-bottom: 25px;
+        @include media(992px) {
+          font-size: 14px;
+          line-height: 19px;
+        }
+      }
+      &--endSpan {
+        font-size: 14px;
+        font-family: $neue__medium;
+        color: $textLight__color;
+      }
+      &--endLink {
+        text-decoration: none;
+        color: $textLight__color;
+        padding-right: 15px;
+      }
+      &--itemRight {
+        width: 35%;
+        @include media(992px) {
+          order: 1;
+          width: 100%;
+        }
+      }
+      &--title {
+        font-size: 48px;
+        font-family: $neue__medium;
+        line-height: 64px;
+        color: $second__color;
+        text-transform: uppercase;
+        @include media(992px) {
+          font-size: 32px;
+          line-height: 43px;
+        }
+      }
+      &--endLine {
+        display: inline-block;
+        background: #b2b2b2;
+        width: 200px;
+        height: 8px;
+        color: #b2b2b2;
+        @include media(992px) {
+          width: 160px;
+          height: 4px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,225 @@
+.hero {
+  position: relative;
+  top: 100px;
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 80px;
+    @include media(576px) {
+      flex-direction: column;
+    }
+    &-left {
+      flex: 2;
+      @include media(576px) {
+        order: 2;
+      }
+    }
+    &-right {
+      flex: 2;
+      @include media(576px) {
+        order: 1;
+      }
+    }
+    &-span {
+      font-size: 14px;
+      color: $textLight__color;
+      font-family: $neue__regular;
+      @include media(576px) {
+        display: none;
+        font-family: $segeo__UI;
+      }
+    }
+    &-title {
+      font-size: 72px;
+      font-family: $neue__Demi-bold;
+      padding-top: 33px;
+      line-height: 72px;
+      @include media(576px) {
+        font-size: 40px;
+        font-family: $segeo__UI;
+        text-align: center;
+      }
+    }
+    &-btn {
+      display: flex;
+      align-items: flex-end;
+      justify-content: left;
+      flex: 1;
+      @include media(576px) {
+        order: 3;
+        position: absolute;
+        top: 50%;
+        right: 20px;
+      }
+      &-play {
+        @include radiusBtn();
+
+        font-size: 20px;
+        font-family: $neue__medium;
+        color: #0f0f0f;
+        border: 1px solid #b2b2b2;
+        cursor: pointer;
+        position: relative;
+        @include media(576px) {
+          background: $primary__color;
+          color: $second__color;
+          font-family: $segeo__UI;
+        }
+      }
+      &-span {
+        font-size: 14px;
+        font-family: $neue__regular;
+        color: $textLight__color;
+        margin-bottom: 50px;
+        text-align: center;
+        padding-left: 10px;
+        @include media(576px) {
+          display: none;
+          font-family: $segeo__UI;
+        }
+      }
+    }
+    &-text {
+      text-align: right;
+      font-size: 20px;
+      color: $textLight__color;
+      text-transform: uppercase;
+      font-family: $neue__regular;
+      line-height: 33px;
+      @include media(768px) {
+        text-align: left;
+        padding-top: 30px;
+      }
+      @include media(576px) {
+        text-align: right;
+        font-family: $segeo__UI;
+      }
+      @include media(350px) {
+        font-size: 18px;
+      }
+    }
+  }
+  &__main-img {
+    background-image: url(../images/mainNestOne.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 775px;
+    margin-top: 40px;
+    width: 100%;
+    &--items {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 196px;
+      @include media(576px) {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+      }
+    }
+    &--send {
+      @include media(576px) {
+        margin-top: 100px;
+      }
+    }
+    &--need {
+      position: relative;
+    }
+    img {
+      width: 100%;
+    }
+    .need__help-link {
+      color: $primary__color;
+      font-size: 14px;
+      line-height: 19px;
+      font-family: $neue__regular;
+      text-decoration: none;
+      background-color: #b2b2b252;
+      padding: 18px 10px 18px 75px;
+      border: none;
+      border-radius: 50px;
+      -webkit-border-radius: 50px;
+      -moz-border-radius: 50px;
+      -ms-border-radius: 50px;
+      -o-border-radius: 50px;
+      outline: none;
+      &::placeholder {
+        color: $primary__color;
+      }
+      @include media(576px) {
+        position: absolute;
+        top: 150px;
+        display: none;
+      }
+    }
+    .need_btn {
+      position: absolute;
+      left: 0px;
+      bottom: 5px;
+      width: 56px;
+      height: 56px;
+      line-height: 50px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      color: #000000;
+      text-align: center;
+      font-size: 14px;
+      font-family: "Neue-regular";
+      @include media(576px) {
+        top: 150px;
+      }
+    }
+    .send__request-link {
+      color: $primary__color;
+      font-size: 14px;
+      font-family: $neue__medium;
+      background: #0e71b8;
+      padding: 20px 40px;
+      line-height: 19px;
+      letter-spacing: 1px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid $primary__color;
+      position: relative;
+      transition: opacity 0.5s ease-in;
+
+      @include media(576px) {
+        margin-top: 170px;
+        display: none;
+      }
+      &--img {
+        position: absolute;
+        width: 0px;
+        height: 0px;
+        top: 50%;
+        left: 0;
+        transform: translate(0%, 0%);
+        opacity: 0;
+        transition: opacity 0.5s ease-in;
+      }
+      &--icon {
+        width: 14px;
+        height: 14px;
+        margin-right: 10px;
+      }
+    }
+    .send__request-link:hover {
+      box-shadow: 0px 0px 0px 5px #0e71b8b6, 0px 0px 0px 13px #1669a58e;
+    }
+    .send__request-link:hover .send__request-link--span {
+      opacity: 0;
+    }
+    .send__request-link:hover .send__request-link--img {
+      width: 42px;
+      height: 24px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 1;
+    }
+    .send__request-link:hover .send__request-link--icon {
+      display: none;
+    }
+  }
+}

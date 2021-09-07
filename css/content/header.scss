@@ -1,0 +1,250 @@
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 200;
+  background-color: $primary__color;
+  width: 100%;
+  &__nav {
+    background-color: $primary__color;
+    width: 100%;
+    height: 100px;
+    padding: 32px 0;
+    border-bottom: 1px solid $textLight__color;
+    &-main {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &-btn--tour {
+      background: none;
+      border: none;
+      margin-left: 53px;
+      font-size: 16px;
+      font-family: $neue__Demi-bold;
+      color: $second__color;
+      text-transform: uppercase;
+      @include media(992px) {
+        margin-left: 0;
+        text-align: center;
+        display: none;
+      }
+      @include media(576px) {
+        font-family: $segeo__UI;
+      }
+    }
+    &-btn--live {
+      color: #dc0000;
+      background: none;
+      border: none;
+      font-size: 16px;
+      font-family: $neue__Demi-bold;
+      text-transform: uppercase;
+      text-decoration: none;
+      margin-left: 38px;
+      margin-right: 50px;
+      cursor: pointer;
+      display: block;
+      position: relative;
+      @include media(1400px) {
+        margin-right: 40px;
+      }
+      @include media(1250px) {
+        margin-right: 20px;
+      }
+      @include media(992px) {
+        margin-left: 0;
+        margin-right: 0;
+        text-align: center;
+        display: none;
+      }
+      @include media(576px) {
+        font-family: $segeo__UI;
+      }
+      &::before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        border-radius: 50px;
+        line-height: 7px;
+        background: #dc0000;
+        position: absolute;
+        left: -9px;
+        top: 6px;
+        -webkit-border-radius: 50px;
+        -moz-border-radius: 50px;
+        -ms-border-radius: 50px;
+        -o-border-radius: 50px;
+        @include media(992px) {
+          top: 7px;
+        }
+      }
+    }
+    &-btn-close {
+      display: none;
+      @include media(992px) {
+        display: block;
+        float: right;
+        margin-right: 20px;
+      }
+    }
+    &-menu-ul {
+      display: flex;
+      @include media(992px) {
+        position: absolute;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        padding: 50px 0;
+        width: 100%;
+        z-index: 100;
+        transform: display linear 4s ease;
+        -webkit-transform: display linear 4s ease;
+        -moz-transform: display linear 4s ease;
+        -ms-transform: display linear 4s ease;
+        -o-transform: display linear 4s ease;
+      }
+    }
+    &-item {
+      margin-left: 20px;
+      list-style: none;
+      @include media(992px) {
+        margin-left: 0;
+        text-align: center;
+        width: 100%;
+        padding-top: 25px;
+      }
+    }
+    &-link {
+      text-decoration: none;
+      font-size: 14px;
+      font-family: $neue__medium;
+      color: $second__color;
+      text-transform: uppercase;
+      transition: 0.5s ease-in-out;
+      -webkit-transition: 0.5s ease-in-out;
+      -moz-transition: 0.5s ease-in-out;
+      -ms-transition: 0.5s ease-in-out;
+      -o-transition: 0.5s ease-in-out;
+      display: block;
+      position: relative;
+      @include media(992px) {
+        text-align: start;
+        font-family: $segeo__UI;
+        font-weight: 500;
+        padding-left: 20px;
+        font-size: 20px;
+      }
+      // &::after {
+      //     content: '';
+      //     background-color: $second__color;
+      //     transition: all .5s ease-in-out;
+      //     position: absolute;
+      //     width: 0;
+      //     height: 2px;
+      //     bottom: 0;
+      //     left: 0;
+      // }
+      // &:hover {
+      //     color: $textLight__color;
+      //     &::after {
+      //         width: 100%;
+      //     }
+      // }
+    }
+    &--medialink {
+      display: none;
+      @include media(992px) {
+        display: block;
+      }
+    }
+    &-icon {
+      position: relative;
+      border: none;
+      background: none;
+      cursor: pointer;
+      z-index: 101;
+    }
+    &-icon,
+    &-icon::before,
+    &-icon::after {
+      width: 3rem;
+      height: 2px;
+      background-color: #333;
+      @include media(992px) {
+        display: block;
+      }
+    }
+    &-icon::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      -webkit-transition: all 0.2s;
+      transition: all 0.2s;
+      -moz-transition: all 0.2s;
+      -ms-transition: all 0.2s;
+      -o-transition: all 0.2s;
+    }
+    &-icon::after {
+      top: 0.8rem;
+    }
+  }
+  &__media {
+    display: none;
+    @include media(992px) {
+      display: flex;
+    }
+    &-item {
+      margin-right: 35px;
+      list-style: none;
+    }
+    &-link {
+      text-decoration: underline;
+      font-size: 20px;
+      text-transform: uppercase;
+      font-family: $neue__regular;
+      color: $second__color;
+      @include media(576px) {
+        font-family: $segeo__UI;
+      }
+      @include media(460px) {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@include media(992px) {
+  .header__nav-menu-ul {
+    position: absolute;
+    top: 0;
+    transform: translateY(-100%);
+    z-index: 100;
+    transition: transform 0.5s ease-in-out;
+  }
+  .show {
+    top: 10px;
+    transform: translateY(0%);
+  }
+}
+
+.mediaNone {
+  @include media(992px) {
+    display: none;
+  }
+}
+
+.header_phone {
+  margin-top: 60px;
+}
+
+// .header__nav.sticky {
+//   position: fixed;
+//   top: 0;
+//   box-shadow: 0px 10px 23px -2px rgba(0, 0, 0, 0.75);
+//   transition: scroll 0.5s ease-in;
+//   z-index: 200;
+// }
